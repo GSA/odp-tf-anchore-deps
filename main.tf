@@ -22,10 +22,6 @@ EOF
 }
 
 resource "aws_iam_role_policy_attachment" "anchore_remote_ecr_scan_policy" {
-	role       = aws_iam_role.anchore_scanner_role.name
-	policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
-}
-
-output "ecr_scan_role_arn" {
-  value = aws_iam_role.anchore_scanner_role.arn
+  role       = aws_iam_role.anchore_scanner_role.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
 }
